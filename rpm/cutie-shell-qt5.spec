@@ -10,6 +10,7 @@ License: GPLv3
 Url:     https://cutie-shell.org/
 Source0: %{name}-%{version}.tar.bz2
 
+BuildRequires: systemd
 BuildRequires: make
 BuildRequires: opt-qt5-qtbase-devel >= 5.15
 BuildRequires: pkgconfig(zlib)
@@ -44,7 +45,7 @@ make install INSTALL_ROOT=%{buildroot}
 %files
 /etc/systemd/logind.conf.d/10-cutie.conf
 %{_bindir}/cutie-ui-io
-%{_libdir}/systemd/system/cutie-ui-io.service
+%{_unitdir}/cutie-ui-io.service
 %{_datadir}/atmospheres/Current/wallpaper.jpg
 %{_datadir}/atmospheres/air/wallpaper.jpg
 %{_datadir}/atmospheres/airy/wallpaper.jpg
